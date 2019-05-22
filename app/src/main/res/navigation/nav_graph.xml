@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.dudo.sleepsafe.ui.main.home.HomeFragment"
+        android:label="SLEEPSAFE"
+        tools:layout="@layout/home_fragment" />
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.dudo.sleepsafe.ui.main.history.HistoryFragment"
+        android:label="@string/history"
+        tools:layout="@layout/history_fragment" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.dudo.sleepsafe.ui.main.settings.SettingsFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/settings_fragment" />
+</navigation>

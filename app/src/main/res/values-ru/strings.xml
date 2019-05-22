@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home">Главная</string>
+    <string name="history">История</string>
+    <string name="settings">Настройки</string>
+    <string name="stop">Стоп</string>
+    <string name="start">Старт</string>
+    <string name="vibration">Вибрация</string>
+    <string name="vibrate_text">Вибрация во время тревоги</string>
+    <string name="flashlight">Фонарик</string>
+    <string name="auto_flashlight_text">Включать фонарик во время тревоги</string>
+    <string name="alert_sound">Сигнал тревоги</string>
+    <string name="flat_surface">Пожалуйста положите ваш телефон на ровную поверхность</string>
+    <string name="customization">Особенности</string>
+</resources>

@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name" translatable="false">SleepSafe</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="history">History</string>
+    <string name="settings">Settings</string>
+    <string name="stop">Stop</string>
+    <string name="start">Start</string>
+    <string name="vibration">Vibration</string>
+    <string name="vibrate_text">Vibrate during alarm</string>
+    <string name="flashlight">Flashlight</string>
+    <string name="auto_flashlight_text">Auto flashlight during alarm</string>
+    <string name="template" translatable="false">Template</string>
+    <string name="alert_sound">Alert sound</string>
+    <string name="flat_surface">Please put your phone on a flat surface</string>
+    <string name="customization">Customization</string>
+    <string name="permission_not_granted">You need to allow access permissions to turn on this feature</string>
+</resources>
