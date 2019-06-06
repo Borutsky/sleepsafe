@@ -1,7 +1,7 @@
 package com.dudo.sleepsafe.ui.main.settings
 
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModel
 import com.dudo.sleepsafe.data.preferences.UserPreferences
 import javax.inject.Inject
 

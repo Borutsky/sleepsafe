@@ -12,4 +12,8 @@
     <string name="alert_sound">Сигнал тревоги</string>
     <string name="flat_surface">Пожалуйста положите ваш телефон на ровную поверхность</string>
     <string name="customization">Особенности</string>
+    <string name="permission_not_granted">Вы долнжы дать доступ к камере, чтобы использовать эту функцию</string>
+    <string name="tracking">Отслеживание</string>
+    <string name="really_stop">Вы точно хотите остановить отслеживание?</string>
+    <string name="history_is_empty">Нет истории</string>
 </resources>

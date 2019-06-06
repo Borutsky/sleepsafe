@@ -28,11 +28,14 @@ class SimpleChart @JvmOverloads constructor(
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
         if (dataSet.isNotEmpty()) {
-            for (i in 0..(60 - dataSet.size)) {
-                dataSet.add(0f)
+            if(dataSet.size != 60){
+                for (i in 0..(60 - dataSet.size)) {
+                    dataSet.add(0f)
+                }
             }
             val paint = Paint()
             paint.color = Color.WHITE
+            paint.isAntiAlias = true
             paint.strokeWidth = context.dpToPx(3f)
             if (step == 0f) {
                 step = width / 60f

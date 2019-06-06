@@ -5,7 +5,9 @@
 
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:name=".SleepSafe"
@@ -16,8 +18,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".ui.tracking.TrackingActivity"
+            android:showOnLockScreen="true"
+            android:launchMode="singleInstance"/>
         <activity android:name=".ui.welcome.WelcomeActivity" />
-        <activity android:name=".ui.main.MainActivity" />
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:showOnLockScreen="true"/>
         <activity
             android:name=".ui.splash.SplashActivity"
             android:theme="@style/AppTheme.Launcher">
@@ -27,6 +34,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service android:name=".service.TrackingService"
+            android:enabled="true"/>
     </application>
 
 </manifest>

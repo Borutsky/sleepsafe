@@ -13,6 +13,8 @@ object Injector {
     var homeComponent: HomeComponent? = null
     var settingsComponent: SettingsComponent? = null
     var historyComponent: HistoryComponent? = null
+    var trackingComponent: TrackingComponent? = null
+    var trackingServiceComponent: TrackingServiceComponent? = null
 
     fun initAppComponent(application: Application) {
         if (appComponent == null) {
@@ -56,8 +58,24 @@ object Injector {
     }
 
     fun initHistoryComponent() {
-        if(historyComponent == null) {
+        if (historyComponent == null) {
             historyComponent = DaggerHistoryComponent.builder()
+                .appComponent(appComponent)
+                .build()
+        }
+    }
+
+    fun initTrackingComponent() {
+        if(trackingComponent == null) {
+            trackingComponent = DaggerTrackingComponent.builder()
+                .appComponent(appComponent)
+                .build()
+        }
+    }
+
+    fun initTrackingServiceComponent(){
+        if(trackingServiceComponent == null) {
+            trackingServiceComponent = DaggerTrackingServiceComponent.builder()
                 .appComponent(appComponent)
                 .build()
         }
@@ -85,6 +103,14 @@ object Injector {
 
     fun releaseHistoryComponent() {
         historyComponent = null
+    }
+
+    fun releaseTrackingComponent() {
+        trackingComponent = null
+    }
+
+    fun releaseTrackingServiceComponent(){
+        trackingServiceComponent = null
     }
 
 }

@@ -7,6 +7,7 @@ import com.dudo.sleepsafe.ui.main.history.HistoryViewModel
 import com.dudo.sleepsafe.ui.main.home.HomeViewModel
 import com.dudo.sleepsafe.ui.main.settings.SettingsViewModel
 import com.dudo.sleepsafe.ui.splash.SplashViewModel
+import com.dudo.sleepsafe.ui.tracking.TrackingViewModel
 import com.dudo.sleepsafe.ui.welcome.WelcomeViewModel
 import com.dudo.sleepsafe.utils.ViewModelFactory
 import dagger.Binds
@@ -45,5 +46,10 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(HistoryViewModel::class)
     internal abstract fun historyViewModel(viewModel: HistoryViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(TrackingViewModel::class)
+    internal abstract fun trackingViewModel(viewModel: TrackingViewModel): ViewModel
 
 }

@@ -1,7 +1,7 @@
 package com.dudo.sleepsafe.ui.main.history
 
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModel
 import com.dudo.sleepsafe.data.database.AppDatabase
 import com.dudo.sleepsafe.data.model.DetectedActivity
 import kotlinx.coroutines.Dispatchers

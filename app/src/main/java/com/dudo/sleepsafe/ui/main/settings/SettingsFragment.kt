@@ -2,6 +2,7 @@ package com.dudo.sleepsafe.ui.main.settings
 
 import android.Manifest
 import android.content.pm.PackageManager
+import android.graphics.Color
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -13,6 +14,7 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 
 import com.dudo.sleepsafe.R
 import com.dudo.sleepsafe.di.Injector
@@ -55,6 +57,7 @@ class SettingsFragment : Fragment() {
             params.setMargins(0, context!!.dpToPx(10f).toInt(), 0, 0)
             radioButton.layoutParams = params
             radioButton.text = it
+            radioButton.setTextColor(Color.WHITE)
             radioGroupSounds.addView(radioButton)
         }
         radioGroupSounds.check(radioGroupSounds.getChildAt(viewModel.soundIndex.value ?: 0).id)

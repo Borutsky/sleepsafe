@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.dudo.sleepsafe.R
 import com.dudo.sleepsafe.di.Injector
+import com.dudo.sleepsafe.service.TrackingService
 import com.dudo.sleepsafe.ui.main.MainActivity
+import com.dudo.sleepsafe.ui.tracking.TrackingActivity
 import com.dudo.sleepsafe.ui.welcome.WelcomeActivity
 import com.dudo.sleepsafe.utils.ViewModelFactory
 import com.dudo.sleepsafe.utils.injectViewModel
@@ -23,10 +25,13 @@ class SplashActivity : AppCompatActivity() {
         Injector.initSplashComponent()
         Injector.splashComponent?.inject(this)
         viewModel = injectViewModel(viewModelFactory)
-        val intent = if(viewModel.isFirst.value == true){
+        var intent = if(viewModel.isFirst.value == true){
             Intent(applicationContext, WelcomeActivity::class.java)
         } else {
             Intent(applicationContext, MainActivity::class .java)
+        }
+        if(TrackingService.running){
+            intent = Intent(applicationContext, TrackingActivity::class.java)
         }
         startActivity(intent)
         finish()

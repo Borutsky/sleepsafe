@@ -33,6 +33,7 @@
         android:id="@+id/navView"
         style="@style/Widget.MaterialComponents.NavigationView"
         app:itemIconTint="@color/colorAccent"
+        app:itemTextColor="@color/colorAccent"
         android:background="@color/colorPrimary"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"

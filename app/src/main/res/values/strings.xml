@@ -15,4 +15,7 @@
     <string name="flat_surface">Please put your phone on a flat surface</string>
     <string name="customization">Customization</string>
     <string name="permission_not_granted">You need to allow access permissions to turn on this feature</string>
+    <string name="tracking">Tracking</string>
+    <string name="really_stop">Are you sure you want to stop tracking?</string>
+    <string name="history_is_empty">History is empty</string>
 </resources>
