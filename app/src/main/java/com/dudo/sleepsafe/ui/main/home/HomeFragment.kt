@@ -59,7 +59,7 @@ class HomeFragment : Fragment(), SensorEventListener {
 
     private fun initButtons() {
         buttonTrackBlock.setOnClickListener {
-            val intent = Intent(activity!!.applicationContext, TrackingActivity::class.java)
+            val intent = Intent(requireActivity().applicationContext, TrackingActivity::class.java)
             startActivity(intent)
             activity?.overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up)
         }
@@ -69,7 +69,7 @@ class HomeFragment : Fragment(), SensorEventListener {
         viewModel = injectViewModel(viewModelFactory)
         viewModel.init()
         if (viewModel.isAlarm.hasObservers()) return
-        viewModel.isReady.observe(this, Observer {
+        viewModel.isReady.observe(viewLifecycleOwner, Observer {
             if (it) {
                 if (job == null) {
                     job = GlobalScope.launch(Dispatchers.IO) {
@@ -141,12 +141,12 @@ class HomeFragment : Fragment(), SensorEventListener {
         circleInner.layoutParams = params
 
         if (gX !in -0.1..0.1 || gY !in -0.1..0.1) {
-            circleMain.background = ContextCompat.getDrawable(context!!, R.drawable.circle_main_filled)
-            circleInner.background = ContextCompat.getDrawable(context!!, R.drawable.circle_inner)
+            circleMain.background = ContextCompat.getDrawable(requireContext(), R.drawable.circle_main_filled)
+            circleInner.background = ContextCompat.getDrawable(requireContext(), R.drawable.circle_inner)
             viewModel.isReady.value = false
         } else {
-            circleMain.background = ContextCompat.getDrawable(context!!, R.drawable.circle_main)
-            circleInner.background = ContextCompat.getDrawable(context!!, R.drawable.circle_inner_white)
+            circleMain.background = ContextCompat.getDrawable(requireContext(), R.drawable.circle_main)
+            circleInner.background = ContextCompat.getDrawable(requireContext(), R.drawable.circle_inner_white)
             viewModel.isReady.value = true
         }
     }

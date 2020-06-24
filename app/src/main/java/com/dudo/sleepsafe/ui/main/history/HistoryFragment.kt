@@ -34,10 +34,10 @@ class HistoryFragment : Fragment() {
         Injector.historyComponent?.inject(this)
         viewModel = injectViewModel(viewModelFactory)
         viewModel.refresh()
-        detectedActivitiesAdapter = DetectedActivitiesAdapter(context!!)
-        recyclerView.layoutManager = LinearLayoutManager(context!!)
+        detectedActivitiesAdapter = DetectedActivitiesAdapter(requireContext())
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = detectedActivitiesAdapter
-        viewModel.activities.observe(this, Observer {
+        viewModel.activities.observe(viewLifecycleOwner, Observer {
             recyclerView.visibility = if (it.isEmpty()) View.GONE else View.VISIBLE
             textEmpty.visibility = if (it.isEmpty()) View.VISIBLE else View.GONE
             detectedActivitiesAdapter.updateList(it.toMutableList())
